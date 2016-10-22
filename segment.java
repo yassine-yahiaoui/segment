@@ -21,11 +21,18 @@ public class segment {
     }
     double distance(){
         return sqrt((p1.abscisse()-p2.abscisse())*(p1.abscisse()-p2.abscisse())+(p1.ordonnee()-p2.ordonnee())*(p1.ordonnee()-p2.ordonnee()));
+    }// utilise pow c'est mieux 
+     public double distance1() {
+        return Math.sqrt(Math.pow((ext2.getX() - ext1.getX()), 2) + 
+                Math.pow((ext2.getY() - ext1.getY()), 2));
     }
+    
     segment symetrie(){
         segment s=new segment(this.p1.symetrie(),this.p2.symetrie());
         return s;
     }
     
-    
+    public String toString() {
+        return "Segment{" + "[" + p1 + ", " + p2 + "]";
+    }
 }
